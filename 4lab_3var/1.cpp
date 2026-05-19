@@ -32,10 +32,11 @@ int main() {
         std::cout << "Task 1 running on: " << q.get_device().get_info<sycl::info::device::name>() << "\n";
 
 
+        auto start_gpu = std::chrono::high_resolution_clock::now();
+
+        {
         sycl::buffer<float, 1> bufA(h_A.data(), sycl::range<1>(N));
         sycl::buffer<float, 1> bufB(h_B_gpu.data(), sycl::range<1>(N));
-
-        auto start_gpu = std::chrono::high_resolution_clock::now();
 
         q.submit([&](sycl::handler& h) {
             auto accA = bufA.get_access<sycl::access::mode::read>(h);
@@ -47,6 +48,7 @@ int main() {
             });
 
         q.wait();
+        }
 
         auto end_gpu = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> time_gpu = end_gpu - start_gpu;
