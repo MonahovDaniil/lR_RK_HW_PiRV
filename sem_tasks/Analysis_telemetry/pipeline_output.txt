@@ -1,0 +1,8 @@
+Thread 0 | Chunk #1 | Aggregate: 55.000000 | Local counter: 1
+Thread 1 | Chunk #2 | Aggregate: 130.000000 | Local counter: 1
+Thread 3 | Chunk #4 | Aggregate: 430.000000 | Local counter: 1
+Thread 2 | Chunk #3 | Aggregate: 255.000000 | Local counter: 1
+Thread 3 | Chunk #7 | Aggregate: 1255.000000 | Local counter: 2
+Thread 0 | Chunk #5 | Aggregate: 655.000000 | Local counter: 2
+Thread 1 | Chunk #6 | Aggregate: 930.000000 | Local counter: 2
+Thread 2 | Chunk #8 | Aggregate: 1630.000000 | Local counter: 2
